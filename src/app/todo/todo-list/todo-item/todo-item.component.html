@@ -1,0 +1,12 @@
+<div class="flex align-center sb item">
+  <div class="flex">
+   <label>
+     <input type="checkbox" [formControl]="control"/>
+     <span></span>
+   </label>
+   {{todo.title}}
+ </div>
+ <a class="btn waves-effect waves-light red btn-small btn-floating">
+   <i class="material-icons" (click)="onDeleteHandller(todo.id)">delete_forever</i>
+ </a>
+</div>

@@ -1,0 +1,12 @@
+<h2 class="center text-type">
+  Welcome to akita todo list!
+</h2>
+<div class="input-field">
+	<i class="material-icons prefix cursor" (click) = "add(input)" >add_alarm</i>
+	<input type="text" class="form-control" placeholder="Add Todo..." #input (keydown.enter)="add(input)">
+</div>
+
+<app-todo-filter (update)="changeFilter($event)" [filters]="filters" [active]="activeFilter$ | async">
+</app-todo-filter>
+
+<app-todo-list [todos]="todos$ | async" (delete)="delete($event)" (complete)="complete($event)"></app-todo-list>
